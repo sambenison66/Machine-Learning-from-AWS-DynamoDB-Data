@@ -1,0 +1,22 @@
+Name: Samuel Benison
+Email: sambenison66@gmail.com
+
+Read Me:
+
+In this assignment,
+1. I have uploaded the input CSV data file manually to S3.
+2 Then, Retrieved the file from S3 and uploaded the file content to Amazon DynamoDB using Java program.
+3. Then the DynamoDB table content is retrieved and converted to ARFF file for Weka using Java program.
+4. Weka cluster is generated for the ARFF file and converted the output to CSV file.
+5. Input the CSV file to D3.js and extract the visualization using Javascript. (You need a server like Tomcat to run this part)
+
+
+All the supporting documents are attached with this folder.
+
+Tool used are AWS Java API, Weka Explorer, D3.js
+
+
+References:
+1. Amazon AWs Documenttion
+2. D3.js Official Tutorial
+3. Wikipedia

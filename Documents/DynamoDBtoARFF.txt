@@ -1,0 +1,9 @@
+GetWeatherStatisticsReport: Scan new-weather-statistics.
+Reading from DynamoDB complete!
+Time Taken for Reading data from DynamoDB : 2120 ms
+Generating CSV file with the DynamoDB Data
+CSV File generated successfully
+Time Taken for generating DynamoDB data to CSV file : 73 ms
+Generating ARFF file from CSV...
+ARFF file generated successfully...
+Time Taken for Generate ARFF file from CSV file : 431 ms

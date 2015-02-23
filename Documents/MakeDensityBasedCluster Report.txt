@@ -1,0 +1,86 @@
+=== Run information ===
+
+Scheme:weka.clusterers.MakeDensityBasedClusterer -M 1.0E-6 -W weka.clusterers.SimpleKMeans -- -N 2 -A "weka.core.EuclideanDistance -R first-last" -I 500 -S 10
+Relation:     weather-data-dynamodb-1
+Instances:    1751
+Attributes:   7
+              STATION
+              DATE
+              EVAP
+              PRCP
+              TOBS
+              AWND
+Ignored:
+              STATIONNAME
+Test mode:evaluate on training data
+
+=== Model and evaluation on training set ===
+
+MakeDensityBasedClusterer: 
+
+Wrapped clusterer: 
+kMeans
+======
+
+Number of iterations: 4
+Within cluster sum of squared errors: 2096.63139476884
+Missing values globally replaced with mean/mode
+
+Cluster centroids:
+                                                Cluster#
+Attribute                    Full Data                 0                 1
+                                (1751)            (1095)             (656)
+==========================================================================
+STATION              GHCND:USW00053909 GHCND:USW00053909 GHCND:USC00410691
+DATE                     20126530.9383      20127325.495     20125204.6585
+EVAP                                                                      
+PRCP                                                                      
+TOBS                           20.8829           20.9434            20.782
+AWND                           14.7733           23.6237                 0
+
+
+
+Fitted estimators (with ML estimates of variance):
+
+Cluster: 0 Prior probability: 0.6252
+
+Attribute: STATION
+Discrete Estimator. Counts =  365 732 1  (Total = 1098)
+Attribute: DATE
+Normal Distribution. Mean = 20127325.495 StdDev = 4730.4737
+Attribute: EVAP
+Discrete Estimator. Counts =  1096 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1  (Total = 1172)
+Attribute: PRCP
+Discrete Estimator. Counts =  7 7 6 8 3 4 7 7 8 4 4 5 7 5 9 5 8 10 4 7 6 10 9 6 5 6 8 7 6 6 8 735 10 8 6 7 6 5 9 7 12 4 8 5 5 15 12 13 16 10 12 15 9 9 3 3 4 3 1 1 1 1 1 1 1 1  (Total = 1161)
+Attribute: TOBS
+Normal Distribution. Mean = 20.9434 StdDev = 74.8171
+Attribute: AWND
+Normal Distribution. Mean = 23.6237 StdDev = 21.4039
+
+Cluster: 1 Prior probability: 0.3748
+
+Attribute: STATION
+Discrete Estimator. Counts =  1 1 657  (Total = 659)
+Attribute: DATE
+Normal Distribution. Mean = 20125204.6585 StdDev = 4982.4301
+Attribute: EVAP
+Discrete Estimator. Counts =  217 5 9 12 13 2 18 6 8 5 5 14 6 3 3 10 3 12 11 11 9 10 11 3 16 13 3 11 4 6 9 19 7 2 6 7 11 8 10 4 3 2 12 7 7 2 17 13 12 7 7 3 7 2 3 3 11 6 6 6 5 5 4 7 3 5 3 3 3 2 2 2 2 3 2 2 2  (Total = 733)
+Attribute: PRCP
+Discrete Estimator. Counts =  10 3 5 13 7 3 8 13 6 9 6 5 6 4 5 6 8 7 8 7 13 18 5 5 4 11 7 6 9 5 8 133 8 11 15 14 8 8 17 13 14 16 14 6 11 21 19 24 25 17 13 23 8 17 5 1 5 4 2 2 2 6 2 3 3 2  (Total = 722)
+Attribute: TOBS
+Normal Distribution. Mean = 20.782 StdDev = 80.943
+Attribute: AWND
+Normal Distribution. Mean = 0 StdDev = 20.4324
+
+
+Time taken to build model (full training data) : 0.02 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0      1095 ( 63%)
+1       656 ( 37%)
+
+
+Log likelihood: -24.87956

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Histogram Chart</title>
+</head>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<Script>
+
+	var width = 500,
+		height = 500,
+		padding = 50;
+
+	d3.csv("weather3.csv", function (data) {
+		
+		var map = data.map( function (i) { 
+			if (!(i.TOBS == '0')) {
+				return parseInt(i.TOBS);
+			}})
+		
+		var histogram = d3.layout.histogram()
+				.bins(10)
+				(map)
+				
+		var y = d3.scale.linear()
+				.domain([0,d3.max(histogram.map(function (i) { return i.length; }))])
+				.range([0, height]);
+		
+		var x = d3.scale.linear()
+				.domain([0,d3.max(map)])
+				.range([0, width]);
+		
+		var xAxis = d3.svg.axis()
+					.scale(x)
+					.orient("bottom");
+				
+		var canvas = d3.select("body").append("svg")
+					.attr("width", width)
+					.attr("height", height + padding)
+					.append("g")
+						.attr("transform", "translate(20,0)")
+		
+		var group = canvas.append("g")
+					.attr("transform", "translate(0, " + height + ")")
+					.call(xAxis)
+					.append("text")
+						.text("TOBS")
+		
+		var bars = canvas.selectAll(".bar")
+					.data(histogram)
+					.enter()
+					.append("g")
+					
+		bars.append("rect")
+			.attr("x", function (d) { return x(d.x); })
+			.attr("y", function (d) { return 500 - y(d.y); })
+			.attr("width", function (d) { return x(d.dx); })
+			.attr("height", function (d) { return y(d.y); })
+			.attr("fill", "steelblue")
+			
+		bars.append("text")
+			.attr("x", function (d) { return x(d.x); })
+			.attr("y", function (d) { return 500 - y(d.y); })
+			.attr("dy", "20px")
+			.attr("dx", function (d) { return x(d.dx)/2; })
+			.attr("fill", "#fff")
+			.attr("text-anchor", "middle")
+			.text(function (d) { return d.y; })
+		
+	})
+
+</Script>
+
+</body>
+</html>

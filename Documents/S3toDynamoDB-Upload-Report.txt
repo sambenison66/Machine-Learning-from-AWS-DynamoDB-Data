@@ -1,0 +1,32 @@
+Downloading an object
+Content-Type: application/octet-stream
+Created Table: {AttributeDefinitions: [{AttributeName: DATE,AttributeType: N}, {AttributeName: STATION,AttributeType: S}],TableName: new-weather-statistics,KeySchema: [{AttributeName: STATION,KeyType: HASH}, {AttributeName: DATE,KeyType: RANGE}],TableStatus: CREATING,CreationDateTime: Mon Nov 10 07:15:37 CST 2014,ProvisionedThroughput: {NumberOfDecreasesToday: 0,ReadCapacityUnits: 10,WriteCapacityUnits: 5},TableSizeBytes: 0,ItemCount: 0,}
+Waiting for new-weather-statistics to become ACTIVE...
+Table Description: {AttributeDefinitions: [{AttributeName: DATE,AttributeType: N}, {AttributeName: STATION,AttributeType: S}],TableName: new-weather-statistics,KeySchema: [{AttributeName: STATION,KeyType: HASH}, {AttributeName: DATE,KeyType: RANGE}],TableStatus: ACTIVE,CreationDateTime: Mon Nov 10 07:15:37 CST 2014,ProvisionedThroughput: {NumberOfDecreasesToday: 0,ReadCapacityUnits: 10,WriteCapacityUnits: 5},TableSizeBytes: 0,ItemCount: 0,}
+Reading the CSV File...
+Inserting the Rows from CSV to Amazon DynamoDB.
+  This might take serveral minutes.. Please wait..
+Processed 100 rows..
+Processed 200 rows..
+Processed 300 rows..
+Processed 400 rows..
+Processed 500 rows..
+Processed 600 rows..
+Processed 700 rows..
+Processed 800 rows..
+Processed 900 rows..
+Processed 1000 rows..
+Processed 1100 rows..
+Processed 1200 rows..
+Processed 1300 rows..
+Processed 1400 rows..
+Processed 1500 rows..
+Processed 1600 rows..
+Processed 1700 rows..
+CSV to NoSQL Import completed successfully..!!
+Total Number of Tuples Inserted : 1751
+
+Listing objects
+ - PA4dataset2.csv  (size = 125812)
+
+Time Taken for Importing data : 193880 ms
